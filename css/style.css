@@ -1,0 +1,92 @@
+header .sc-carousel{
+    position: relative;
+}
+
+header .sc-carousel .sc-carousel-inner{
+    position: relative;
+}
+
+header .sc-carousel .sc-carousel-item{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+}
+
+header .sc-carousel .sc-carousel-item.active{
+    opacity: 1;
+    z-index: 3;
+}
+
+header .sc-carousel .sc-carousel-item:nth-of-type(1){
+    background-image: url("../images/home/home-bg-1-10109cb9.jpg");
+}
+
+header .sc-carousel .sc-carousel-item:nth-of-type(2){
+    background-image: url("../images/home/home-bg-2-145b44b0.jpg");
+}
+
+header .sc-carousel .sc-carousel-item:nth-of-type(3){
+    background-image: url("../images/home/home-bg-3-f6fde351.jpg");
+}
+
+header .sc-carousel .sc-carousel-item .part1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .sc-carousel .sc-carousel-item .part2 .item{
+    position: relative;
+}
+
+header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(1){
+    position: relative;
+    width: 70%;
+}
+header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-30deg);
+    width: 90%;
+}
+
+header .sc-carousel>button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    background-color: transparent;
+    transition-duration: 0.5s;
+}
+
+header .sc-carousel>button:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+header .sc-carousel>button.next{
+    right: 20px;
+}
+
+header .sc-carousel>button.prev{
+    left: 20px;
+}
+
+
+
+
+
+
+

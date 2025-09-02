@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: "Nunito",sans-serif;
+}
+
+:root{
+    --main-color: #CB0215;
+    --first-color: #CB0215;
+    --second-color: #0F7AD7;
+    --third-color: #ED9721;
+}
