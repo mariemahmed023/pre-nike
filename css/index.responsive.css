@@ -1,19 +1,77 @@
-@media (max-width: 1300px) {}
-
-@media (min-width: 371px) and (max-width: 1300px) {
-
-    .cover {
-        overflow: auto;
+@media (max-width: 1300px) {
+    header .sc-carousel>button{
+        top: initial !important;
+        bottom: 0;
+        left: initial !important;
     }
 
-    table {
-        width: max-content;
+    header .sc-carousel>button.next{
+        right: 20px;
+    }
+
+
+    header .sc-carousel>button.prev{
+        right: 80px;
+    }
+
+    header .sc-carousel .sc-carousel-item{
+        padding-top: 100px;
+        display: block;
+    }
+
+    header .sc-carousel .sc-carousel-item .row{
+        height: 100vh;
+    }
+
+    header .sc-carousel .sc-carousel-item .part1 h2{
+        font-size: 30px;
+    }
+
+    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(1){
+        width: 50%;
+        top: -90px;
+    }
+
+    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(2){
+        width: 70%;
+        left: 15%;
     }
 }
 
-@media (min-width: 577px) and (max-width: 1300px) {}
+@media (min-width: 371px) and (max-width: 1300px) {}
 
-@media (min-width: 769px) and (max-width: 1300px) {}
+@media (min-width: 577px) and (max-width: 1300px) {
+    header .sc-carousel .sc-carousel-item{
+        padding-top: 110px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+    header .sc-carousel .sc-carousel-item{
+        display: flex;
+        padding-top: initial;
+    }
+
+    header .sc-carousel .sc-carousel-item .container{
+        margin-top: 80px;
+    }
+
+    header .sc-carousel .sc-carousel-item .container .row{
+        height: auto;
+    }
+
+    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(1){
+        width: 70%;
+        top: -90px;
+        left: 10%;
+    }
+
+    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(2){
+        width: 90%;
+        top: 0%;
+        left: 20%;
+    }
+}
 
 @media (min-width: 992px) and (max-width: 1300px) {}
 

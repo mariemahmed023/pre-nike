@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="images/logo-f70704f5.png" type="image/x-icon">
         <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/keyframes.css">
@@ -13,64 +14,105 @@
         <title>Nike</title>
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/first-logo.png" id="logo" alt="" class="img-fluid">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item me-3 active">
+                            <a class="nav-link " aria-current="page" href="#Home">Home</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link" href="#Latest">Latest</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Featured">Featured</a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="list-unstyled d-flex mb-0">
+                        <li class="me-3">
+                            <i class="fa-solid fa-heart"></i>
+                        </li>
+                        <li class="me-3">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-user"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <header>
             <div class="sc-carousel vh-100">
                 <div class="sc-carousel-inner h-100">
-                    <div class="sc-carousel-item h-100 active">
+                    <div class="sc-carousel-item h-100 active" data-color-name="--first-color">
                         <div class="container h-100">
-                            <div class="row">
-                                <div class="col-lg-5 part1">
+                            <div class="row h-100">
+                                <div class="col-md-5 part1">
                                     <div class="item">
                                         <h5>Nike Red Shoes</h5>
-                                        <h2 class="h1">Nike Metcon Shoes</h2>
-                                        <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Repellat Maiores 
-                                            Et Eos Eaque Veritatis Aut Laboriosam Earum Dolorem Iste Atque</p>
-                                        <button class="btn">See More</button>    
+                                        <h2 class="my-3">Nike Metcon Shoes</h2>
+                                        <p>
+                                            Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Repellat Maiores 
+                                            Et Eos Eaque Veritatis Aut Laboriosam Earum Dolorem Iste Atque
+                                        </p>
+                                        <button class="btn">See More</button>
                                     </div>
                                 </div>
-                                <img src="images/home/home-text-1-6b65fe86.png" alt="">
-                                <div class="col-lg-7 part2">
+                                <div class="col-md-7 part2">
                                     <div class="item">
+                                        <img src="images/home/home-text-1-6b65fe86.png" alt="">
                                         <img src="images/home/home-shoe-1-8709721e.png" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="sc-carousel-item">
+                    <div class="sc-carousel-item h-100" data-color-name="--second-color">
                         <div class="container h-100">
-                            <div class="row">
-                                <div class="col-lg-5 part1">
+                            <div class="row h-100">
+                                <div class="col-md-5 part1">
                                     <div class="item">
                                         <h5>Nike Red Shoes</h5>
-                                        <h2 class="h1">Nike Metcon Shoes</h2>
-                                        <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Repellat Maiores 
-                                            Et Eos Eaque Veritatis Aut Laboriosam Earum Dolorem Iste Atque</p>
-                                        <button class="btn">See More</button>    
+                                        <h2 class="my-3">Nike Metcon Shoes</h2>
+                                        <p>
+                                            Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Repellat Maiores 
+                                            Et Eos Eaque Veritatis Aut Laboriosam Earum Dolorem Iste Atque
+                                        </p>
+                                        <button class="btn">See More</button>
                                     </div>
                                 </div>
-                                <div class="col-lg-7 part2">
-                                    <img src="images/home/home-text-2-4283a122.png" alt="">
+                                <div class="col-md-7 part2">
                                     <div class="item">
+                                        <img src="images/home/home-text-2-4283a122.png" alt="">
                                         <img src="images/home/home-shoe-2-f19f7698.png" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="sc-carousel-item">
+                    <div class="sc-carousel-item h-100" data-color-name="--third-color">
                         <div class="container h-100">
-                            <div class="row">
-                                <div class="col-lg-5 part1">
+                            <div class="row h-100">
+                                <div class="col-md-5 part1">
                                     <div class="item">
                                         <h5>Nike Red Shoes</h5>
-                                        <h2 class="h1">Nike Metcon Shoes</h2>
-                                        <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Repellat Maiores 
-                                            Et Eos Eaque Veritatis Aut Laboriosam Earum Dolorem Iste Atque</p>
-                                        <button class="btn">See More</button>    
+                                        <h2 class="my-3">Nike Metcon Shoes</h2>
+                                        <p>
+                                            Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Repellat Maiores 
+                                            Et Eos Eaque Veritatis Aut Laboriosam Earum Dolorem Iste Atque
+                                        </p>
+                                        <button class="btn">See More</button>
                                     </div>
                                 </div>
-                                <div class="col-lg-7 part2">
+                                <div class="col-md-7 part2">
                                     <div class="item">
                                         <img src="images/home/home-text-3-4093633c.png" alt="">
                                         <img src="images/home/home-shoe-3-55ec87ce (1).png" alt="">
@@ -80,10 +122,27 @@
                         </div>
                     </div>
                 </div>
-                <button class="next"><i class="fa-solid fa-angle-right"></i></button>
-                <button class="prev"><i class="fa-solid fa-angle-left"></i></button>
+                <button class="next">
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+                <button class="prev">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
             </div>
         </header>
+
+        <section id="Latest">
+            <h2 class="text-center">Latest Products</h2>
+        </section>
+
+        <section id="Featured">
+            <h2 class="text-center">Featured</h2>
+        </section>
+
+        <div class="loadingPage">
+            <img src="images/nike-7521242a.gif" alt="">
+        </div>
+        <script src="js/bootstrap.min.js"></script>
         <script src="js/shoes.js"></script>
         <script src="js/global-functions.js"></script>
         <script src="js/index.js"></script>
