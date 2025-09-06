@@ -1,78 +1,188 @@
 @media (max-width: 1300px) {
-    header .sc-carousel>button{
+    header .sc-carousel>button {
         top: initial !important;
         bottom: 0;
         left: initial !important;
     }
 
-    header .sc-carousel>button.next{
+    header .sc-carousel>button.next {
         right: 20px;
     }
 
 
-    header .sc-carousel>button.prev{
+    header .sc-carousel>button.prev {
         right: 80px;
     }
 
-    header .sc-carousel .sc-carousel-item{
+    header .sc-carousel .sc-carousel-item {
         padding-top: 100px;
         display: block;
     }
 
-    header .sc-carousel .sc-carousel-item .row{
+    header .sc-carousel .sc-carousel-item .row {
         height: 100vh;
     }
 
-    header .sc-carousel .sc-carousel-item .part1 h2{
+    header .sc-carousel .sc-carousel-item .part1 h2 {
         font-size: 30px;
     }
 
-    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(1){
+    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(1) {
         width: 50%;
         top: -90px;
     }
 
-    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(2){
+    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(2) {
         width: 70%;
         left: 15%;
     }
+
+    nav.navbar .navbar-brand {
+        width: 25%;
+    }
+
+    nav.navbar .navbar-toggler {
+        width: 43px;
+        height: 35px;
+        border: 1px solid var(--main-color);
+        border-radius: 5px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav.navbar .navbar-toggler span {
+        display: block;
+        width: 60%;
+        height: 2px;
+        background-color: var(--main-color);
+    }
+
+    nav.navbar .navbar-toggler span:nth-of-type(2) {
+        margin-block: 5px;
+    }
+
+    nav.navbar .navbar-collapse {
+        padding-block: 10px;
+        background: #ada996;
+        background: -webkit-linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
+        background: linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) li.nav-item,
+    nav.navbar .navbar-collapse ul:nth-of-type(2) {
+        text-align: center;
+        width: fit-content;
+        margin-inline: auto !important;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) li.nav-item {
+        padding: 8px !important;
+    }
+
+    .popup .box{
+        width: 280px !important;
+    }
+
+    .popup[data-popup-name="shop"] .box{
+        margin: 30px auto !important;
+    }
+
+    #Offer .item a:before{
+        transform: translate(-0%,50%) rotate(45deg);
+    }
+
+    #Offer .item a:hover:before{
+        transform: translate(-150%,150%) rotate(45deg);
+    }
 }
 
-@media (min-width: 371px) and (max-width: 1300px) {}
+@media (min-width: 371px) and (max-width: 1300px) {
+    nav.navbar .navbar-brand {
+        width: 20%;
+    }
+
+    .popup .box{
+        width: 350px !important;
+    }
+}
 
 @media (min-width: 577px) and (max-width: 1300px) {
-    header .sc-carousel .sc-carousel-item{
+    header .sc-carousel .sc-carousel-item {
         padding-top: 110px;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1300px) {
-    header .sc-carousel .sc-carousel-item{
+    header .sc-carousel .sc-carousel-item {
         display: flex;
         padding-top: initial;
     }
 
-    header .sc-carousel .sc-carousel-item .container{
+    header .sc-carousel .sc-carousel-item .container {
         margin-top: 80px;
     }
 
-    header .sc-carousel .sc-carousel-item .container .row{
+    header .sc-carousel .sc-carousel-item .container .row {
         height: auto;
     }
 
-    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(1){
+    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(1) {
         width: 70%;
         top: -90px;
         left: 10%;
     }
 
-    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(2){
+    header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(2) {
         width: 90%;
         top: 0%;
         left: 20%;
     }
+
+    nav.navbar .navbar-brand {
+        width: 12%;
+    }
+
+    .popup[data-popup-name="shop"] .box{
+        width: 750px !important;
+    }
 }
 
-@media (min-width: 992px) and (max-width: 1300px) {}
+@media (min-width: 992px) and (max-width: 1300px) {
+    nav.navbar {
+        padding: 0;
+    }
+
+    nav.navbar .navbar-brand {
+        width: 8%;
+    }
+
+    nav.navbar .navbar-toggler {
+        display: none;
+    }
+
+    nav.navbar .navbar-collapse {
+        background: transparent;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) {
+        margin-bottom: 0 !important;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) li.nav-item:not(:last-child){
+        margin-right: 15px !important;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) li.nav-item,
+    nav.navbar .navbar-collapse ul:nth-of-type(2){
+        margin-inline: initial !important;
+        text-align: initial;
+        width: initial;
+    }
+}
 
 @media (min-width: 1181px) and (max-width: 1300px) {}

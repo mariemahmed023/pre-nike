@@ -1,18 +1,124 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 
-body{
-    font-family: "Nunito",sans-serif;
+body {
+    font-family: "Nunito", sans-serif;
+    background: rgba(173, 169, 150, .5);
+    background: -webkit-linear-gradient(to right, rgba(234, 234, 234, .5), rgba(219, 219, 219, .5), rgba(242, 242, 242, .5), rgba(173, 169, 150, .5));
+    background: linear-gradient(to right, rgba(234, 234, 234, .5), rgba(219, 219, 219, .5), rgba(242, 242, 242, .5), rgba(173, 169, 150, .5));
 }
 
-:root{
-    --main-color: #CB0215;
-    --first-color: #CB0215;
+.mainColor{
+    color: var(--main-color);
+}
+
+.mainBorder{
+    border: 1px solid var(--main-color);
+}
+
+.mainButton{
+    border: 1px solid var(--main-color);
+    background-color: var(--white);
+    transition-duration: 0.5s;
+    color: var(--main-color);
+}
+
+.mainButton:hover{
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+:root {
+    --main-color: #fb2527;
+    --first-color: #fb2527;
     --second-color: #0F7AD7;
     --third-color: #ED9721;
-    --white:#fff;
+    --white: #fff;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.title img {
+    width: 20%;
+}
+
+.title h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    display: none;
+    transition-duration: 0.5s;
+}
+
+
+.popup.active{
+    display: flex;
+}
+
+.popup[data-popup-name="shop"].active{
+    display: block;
+}
+
+
+.popup.show{
+    opacity: 1;
+}
+
+
+.popup .box {
+    background: #ADA996;
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    width: 400px;
+    text-align: center;
+    position: relative;
+    top: -100%;
+    transition-duration: 1s;
+    opacity: 0;
+}
+
+.popup[data-popup-name="shop"] .box{
+    margin: 20px auto;
+    width: 50%;
+}
+
+.popup .box.show{
+    top: 0%;
+    opacity: 1;
+}
+
+.popup .box .header  h3{
+    color: var(--main-color);
+}
+
+.popup .box .header i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--main-color);
+    font-size: 25px;
+    cursor: pointer;
 }

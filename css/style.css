@@ -65,6 +65,16 @@ nav.navbar .nav-item:hover::after{
     opacity: 1;
 }
 
+nav.navbar .navbar-collapse ul:nth-of-type(2) li i {
+    font-size: 20px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    color: #777;
+}
+
+nav.navbar .navbar-collapse ul:nth-of-type(2) li:hover i{
+    color: var(--main-color);
+}
 
 header .sc-carousel {
     position: relative;
@@ -198,20 +208,119 @@ header .sc-carousel>button.next {
 
 header .sc-carousel>button.prev {
     left: 20px;
+
 }
 
-#Latest{
-    background-color: #09c;
+#Offer,
+#Offer .item{
+    overflow: hidden;
 }
 
-#Latest,
-#Featured{
-    height: 100vh;
+#Offer .item a img{
+    transform: scale(1.1);
+    transition-duration: 1s;
 }
 
-#Featured{
-    background-color: #f0f;
+#Offer .item a {
+    position: relative;
+    height: 100%;
 }
+
+#Offer .item a:hover img{
+    transform: scale(1);
+}
+
+#Offer .item a:before{
+    content: "";
+    display: block;
+    width: 150%;
+    height: 100%;
+    position: absolute;
+    left: 100%;
+    top: -100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    transform: translate(-10%,70%)  rotate(45deg);
+    transition-duration: 1s;
+}
+
+#Offer .item a:hover:before{
+    transform: translate(-160%,90%) rotate(45deg);
+}
+
+
+#Offer .part1{
+    background-color: #000;
+}
+
+
+
+#Latest .product{
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: var(--white);
+    padding: 20px;
+}
+
+#Latest .product .part1 ul{
+    margin-bottom: 0;
+}
+
+#Latest .product .part1 .listImages li{
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#Latest .product .part1 img{
+    transform: scale(.8);
+    transition-duration: .5s;
+}
+
+#Latest .product .part1 img:hover{
+
+    transform: scale(1);
+}
+
+#Latest .product .part1 .selectedImg {
+    width: 70%;
+    margin: auto;
+}
+
+#Latest .product .part2 p{
+    color: #777;
+}
+
+#Latest .product .part2  .oldPrice{
+    font-size: 14px;
+}
+
+#Latest .product .part2  .newPrice{
+    font-weight: 600;
+    font-size: 14px;
+    color: #000;
+}
+
+
+#Latest .product .part2 ul li{
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+#Latest .product .part2 ul li.active{
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
 
 .loadingPage{
     position: fixed;
@@ -231,3 +340,6 @@ header .sc-carousel>button.prev {
 .loadingPage.hide{
     opacity: 0;
 }
+
+
+
