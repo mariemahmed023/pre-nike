@@ -6,7 +6,17 @@ let html = document.querySelector("html"),
     heightOfNavbar = navbarEle.clientHeight,
     loadingPageEle = document.querySelector(".loadingPage"),
     correctImgs = document.querySelectorAll(".correctImg"),
-    popUpBoxes = document.querySelector(".popup .box");
+    popUpBoxes = document.querySelectorAll(".popup .box"),
+    cartProducts = [];
+
+
+    if (localStorage.getItem("cartProducts") != null){
+        cartProducts = JSON.parse(localStorage.getItem("cartProducts"));
+    }
+
+    else {
+        updateLocalStorage();
+    }
 
 window.addEventListener("DOMContentLoaded", function () {
     let currentSlide = document.querySelector(
@@ -63,13 +73,13 @@ navLinks.forEach(function (navLink) {
             left: 0,
         });
 
-        currentNavLink.classList.remove("active");
-        navLink.parentElement.classList.add("active");
+        // currentNavLink.classList.remove("active");
+        // navLink.parentElement.classList.add("active");
     });
 });
 
 window.addEventListener("scroll", function () {
-    let topOfWindow = window.scrollY,
+    let topOfWindow = window.scrollY + heightOfNavbar,
         sectionNames = ["Home", "Latest", "Featured"];
 
     for (let sectionName of sectionNames) {
@@ -102,67 +112,92 @@ popUpBoxes.forEach(function (popupBox) {
     });
 });
 
+
 latest.forEach(function (product) {
+
+    let sizesHTML = ``;
+
     document.querySelector("#Latest .products").innerHTML += `
-    <div class="product mb-3">
-                            <div class="row">
-                                <div class="col-lg-6 part1">
-                                    <div class="item">
-                                        <div class="row">
-                                            <div class="col-lg-2">
-                                                <div class="item">
-                                                    <ul type="none" class="listImages p-0">
-                                                        <li class="mb-2">
-                                                            <img src="images/latest/17-1-8483c8aa.png" class="img-fluid"  alt=""></img>
-                                                        </li>
-                                                        <li class="mb-2">
-                                                            <img src="images/latest/17-2-def97a6a.png" class="img-fluid"  alt=""></img>
-                                                        </li>
-                                                        <li class="mb-2">
-                                                            <img src="images/latest/17-3-54f8063a.png" class="img-fluid"  alt=""></img>
-                                                        </li>
-                                                        <li >
-                                                            <img src="images/latest/17-4-921babb4.png" class="img-fluid"  alt=""></img>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-10">
-                                                <div class="item selectedImg">
-                                                    <img src="images/latest/17-1-8483c8aa.png" class="img-fluid" alt=""></img>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<div class="product mb-3" data-product-id="${product.id}" data-selected-size="${product.sizes[0]}" data-selected-colors="${product.colors[0]}">
+            <div class="row">
+                <div class="col-lg-6 part1">
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-2 col-lg-3 col-xl-2">
+                                <div class="item">
+                                    <ul type="none" class="listImages p-0">
+                                        ${prepareImages(product.images)}
+                                    </ul>
                                 </div>
-                                <div class="col-lg-6 part2">
-                                    <div class="item">
-                                        <h3 class="mainColor">New Nike Black Airmax Shoes</h3>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi modi minus eum debitis in? Aliquid doloribus, 
-                                            omnis eveniet inventore quod delectus dolores quia illum itaque dolorem, fuga recusandae at minus eum. 
-                                            Dolore exercitationem hic fugiat. Eaque, inventore soluta sunt voluptates nisi esse. Reprehenderit dolorem qui, 
-                                            dolores asperiores fuga illo eligendi!</p>
-                                            <div class="specialRow">                                                
-                                                    <strong class="me-3">Price :</strong>
-                                                    <span class="oldPrice mainColor text-decoration-line-through">120 <sup>$</sup></span>
-                                                    <span class="newPrice">96 <sup>$</sup></span>
-                                                
-                                            </div>
-                                            <div class="specialRow ">
-                                                <strong class="me-3">Size :</strong>
-                                                <ul type="none" class="d-inline-flex p-0 ">
-                                                    <li class="mainBorder active me-3">S</li>
-                                                    <li class="mainBorder me-3">M</li>
-                                                    <li class="mainBorder me-3">L</li>
-                                                    <li class="mainBorder">XL</li>
-                                                </ul>
-                                            </div>
-                                            <button class="btn mainButton">
-                                                Add To Cart
-                                            </button>
-                                    </div>
+                            </div>
+                            <div class="col-md-10 col-lg-9 col-xl-10">
+                                <div class="item selectedImg">
+                                    <img src="images/products/${product.images?.[0]}" class="img-fluid" alt=""></img>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 part2">
+                    <div class="item">
+                        <h3 class="mainColor">${product.name}</h3>
+                        <p>${product.description}</p>
+                            <div class="specialRow">                                                
+                                    <strong class="me-3">Price :</strong>
+                                    ${preparePrice(product.price, product.discount)}
+                            </div>
+                            <div class="specialRow sizes">
+                                <strong class="me-3">Size :</strong>
+                                <ul type="none" class="d-inline-flex p-0 ">
+                                        ${prepareSizes(product.sizes)}
+                                </ul>
+                            </div>
+                            
+                            <button class="btn mainButton" onclick="addToCart(this, ${product.id})">
+                                Add To Cart
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
 });
+
+features.forEach(function (product) {
+
+    let elements = ``;
+
+    for (let i = 0; i < product.images.length; i++) {
+        elements += `
+                <li 
+                onclick="changeActive(this); changeSelectedImg(this);" 
+                src="images/products/${product.images[i]}" 
+                class=" me-2 mainBorder ${(i != product.images.length - 1) ? 'me-2' : ''} ${(i == 0) ? 'active' : ''} rounded-circle"></li>
+        `;
+    }
+
+
+    document.querySelector("#Featured .row").innerHTML += `
+    <div class="col-lg-3 col-sm-6 mb-3 ">
+        <div class="item product text-center bg-light  ">
+            <p class="${(product.discount == 0) ? 'd-none' : ''}">${product.discount * 100}%</p>
+            <div class="selectedImg">
+                <img src="images/products/${product.images[0]}" alt="" class="img-fluid">
+            </div>
+            <i class="fa-solid fa-magnifying-glass" onclick="showProductIntoPopup(${product.id}); openPopup('product')"></i>
+            <ul type="none" class="d-flex p-0 justify-content-center">
+                ${elements}
+            </ul>
+            <h6>${product.name}</h6>
+            <div class="specialRow price">
+                ${preparePrice(product.price, product.discount)}
+            </div>
+            
+        </div>
+    </div>
+    `;
+});
+
+
+
+

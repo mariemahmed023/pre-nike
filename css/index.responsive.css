@@ -99,6 +99,35 @@
     #Offer .item a:hover:before{
         transform: translate(-150%,150%) rotate(45deg);
     }
+
+    .title img{
+        width: 50%;
+    }
+
+    #Latest .product .part1 ul{
+        display: flex;
+    }
+
+    #Latest .product .part2 h3{
+        font-size: 18px;
+    }
+
+    #Featured .item{
+        max-width: 280px;
+        margin: auto;
+    }
+
+    .popup[data-popup-name="product"]{
+        overflow-y: auto;
+    }
+
+    .popup[data-popup-name="product"].active{
+        display: block;
+    }
+
+    .popup[data-popup-name="product"] .box{
+        margin: 20px auto;
+    }
 }
 
 @media (min-width: 371px) and (max-width: 1300px) {
@@ -109,11 +138,31 @@
     .popup .box{
         width: 350px !important;
     }
+
+    .title img{
+        width: 30%;
+    }
+
+    #Latest .product .part2 h3{
+        font-size: 20px;
+    }
 }
 
 @media (min-width: 577px) and (max-width: 1300px) {
     header .sc-carousel .sc-carousel-item {
         padding-top: 110px;
+    }
+    .title img{
+        width: 30%;
+    }
+
+    #Latest .product{
+        width: 75%;
+        margin: auto;
+    }
+
+    .popup .box{
+        width: 500px;
     }
 }
 
@@ -147,8 +196,13 @@
         width: 12%;
     }
 
-    .popup[data-popup-name="shop"] .box{
+    .popup[data-popup-name="shop"] .box,
+    .popup[data-popup-name="product"] .box{
         width: 750px !important;
+    }
+
+    #Latest .product .part1 ul{
+        display: block;
     }
 }
 
@@ -182,6 +236,15 @@
         margin-inline: initial !important;
         text-align: initial;
         width: initial;
+    }
+
+    .container{
+        max-width: 960px;
+    }
+
+    #Latest .product{
+        width: 100%;
+        margin: initial;
     }
 }
 

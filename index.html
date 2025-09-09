@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="images/logo-f70704f5.png" type="image/x-icon">
+        <link rel="shortcut icon" href="images/logo-f70704f5.png" id="ShortcutIcon" type="image/x-icon">
         <link rel="stylesheet" href="css/all.min.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/fonts.css">
@@ -26,13 +26,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item me-3 active">
+                        <li class="nav-item me-3 active" onclick="changeActive(this)">
                             <a class="nav-link " aria-current="page" href="#Home">Home</a>
                         </li>
-                        <li class="nav-item me-3">
+                        <li class="nav-item me-3" onclick="changeActive(this)">
                             <a class="nav-link" href="#Latest">Latest</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" onclick="changeActive(this)">
                             <a class="nav-link" href="#Featured">Featured</a>
                         </li>
                         
@@ -156,7 +156,7 @@
             </div>
         </section>
 
-        <section id="Latest" class="py-5">
+        <section id="Latest" class="py-4 py-lg-5">
             <div class="container">
                 <div class="title">
                     <img src="images/first-correct.png" class="correctImg" alt="" >
@@ -235,6 +235,28 @@
                     <img src="images/first-correct.png" class="correctImg" alt="" >
                     <h2 class="text-center">FEATURE PRODUCTS</h2>
                 </div>
+                <div class="content">
+                    <div class="row ">
+                        <!-- <div class="col-lg-3 col-sm-6 mb-3 ">
+                            <div class="item text-center bg-light  ">
+                                <p>-16%</p>
+                                <img src="images/featured/1-1.png" alt="" class="img-fluid">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <ul type="none" class="d-flex p-0 justify-content-center">
+                                    <li onclick="changeActive(this)" class=" me-2 mainBorder active rounded-circle"></li>
+                                    <li onclick="changeActive(this)" class="me-2 mainBorder rounded-circle"></li>
+                                    <li onclick="changeActive(this)" class="me-2 mainBorder rounded-circle"></li>
+                                    <li onclick="changeActive(this)" class="mainBorder rounded-circle"></li>
+                                </ul>
+                                <h6>Basketball Shoes</h6>
+                                <div class="specialRow price">
+                                    <span class="oldPrice mainColor text-decoration-line-through">120 <sup>$</sup></span>
+                                    <span class="newPrice">96 <sup>$</sup></span>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -276,7 +298,39 @@
             </div>
         </div>
 
-        
+        <div class="popup" data-popup-name="product" onclick="closePopup('product')">
+            <div class="box product  py-4 px-3 rounded-3">
+                <!-- <div class="row">
+                    <div class="col-md-6">
+                        <div class="item">
+                            <div class="selectedImg">
+                                <img src="images/featured/1-1.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="listImages">
+                                <ul type="none" class="d-flex p-0">
+                                    <li class="active me-2"><img src="images/featured/1-1.png" alt="" class="img-fluid"></li>
+                                    <li class="me-2"><img src="images/featured/1-2.png" alt="" class="img-fluid"></li>
+                                    <li class="me-2"><img src="images/featured/1-3.png" alt="" class="img-fluid"></li>
+                                    <li><img src="images/featured/1-4.png" alt="" class="img-fluid"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-start">
+                        <div class="item">
+                            <h3 class="mb-3">Basketball Shoes</h3>
+                            <hr>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, aspernatur. Eveniet, 
+                                fugiat recusandae voluptatum odio placeat aperiam impedit architecto quod modi, 
+                                possimus qui doloremque, vel aut! Eius totam sed numquam.
+                            </p>
+                            <button class="btn mainButton">Add To Cart</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
 
         <script src="js/bootstrap.min.js"></script>
         <script src="js/shoes.js"></script>
